@@ -1,0 +1,14 @@
+@import '../../../scss/variables.scss';
+.nav-rep{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    align-items: center;
+    border-bottom: solid 1px $color-gray;
+    .logo{
+        height: 50px;
+        img{
+            height: inherit;
+        }   
+    }
+}

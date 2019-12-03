@@ -1,0 +1,7 @@
+@import '../../../scss/variables.scss';
+.titulo{
+    font-size: 18px;
+    &[color-theme=white]{
+        color: white;
+    }
+}
