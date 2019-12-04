@@ -2,7 +2,12 @@
 .nav-rep{
     display: flex;
     justify-content: space-between;
-    padding: 5px;
+    padding: {
+        top:5px;
+        right:25px;
+        bottom:5px;
+        left: 25px;
+    }
     align-items: center;
     border-bottom: solid 1px $color-gray;
     .logo{

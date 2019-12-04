@@ -2,8 +2,25 @@
 body{
     background-color: $color-night;
 }
+/* Mixins */
+@mixin transition{
+    transition: all 320ms ease-in-out;
+}
 /* Resets */
 
 figure{
     margin: 0;
+}
+input{
+    background-color: transparent;
+    padding: 5px;
+    border: solid 1px $color-gray;
+    display: block;
+    border-radius: 5px;
+    width: 100%;
+    @include transition();
+    &:focus{
+        outline: none;
+        border-color: $color-dark-aqua;
+    }
 }
