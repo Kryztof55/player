@@ -2,10 +2,7 @@
 body{
     background-color: $color-night;
 }
-/* Mixins */
-@mixin transition{
-    transition: all 320ms ease-in-out;
-}
+
 /* Resets */
 
 figure{
@@ -23,4 +20,12 @@ input{
         outline: none;
         border-color: $color-dark-aqua;
     }
+}
+button{
+    background: none;
+    border: 0;
+    &:focus{
+        outline: none;
+    }
+
 }

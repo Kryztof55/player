@@ -1,0 +1,21 @@
+@import '../../../scss/variables.scss';
+.text{
+    letter-spacing: 2;
+    &.display-artist, &.display-cancion{
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: lighter;
+        
+    }
+    &.display-cancion{
+        font-size: 15px;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    &[color-theme=white]{
+        color: white;
+    }
+}

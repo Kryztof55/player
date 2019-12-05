@@ -1,0 +1,13 @@
+@import '../../../scss/variables.scss';
+.controles{
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+}
+@media #{$n-tablet}{
+    .controles{
+        width: 400px;
+    }
+}

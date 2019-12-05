@@ -6,7 +6,7 @@ class BtnPlay extends Component {
     render(){
         return (
             <button className="btn btnPlay">
-                <i class="material-icons">play_arrow</i>
+                <i className="material-icons">play_arrow</i>
             </button>
         );
     }

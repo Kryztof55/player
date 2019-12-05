@@ -1,0 +1,18 @@
+@import '../../../scss/variables.scss';
+.btn{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(white,.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    i{
+        font-size: 20px;
+        color:$color-night;
+    }
+    &:active{
+        background-color: $color-dark-aqua;
+    }
+}

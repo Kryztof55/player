@@ -6,7 +6,7 @@ class BtnAdelante extends Component {
     render(){
         return (
             <button className="btn btnAdelante">
-                <i class="material-icons">fast_forward</i>
+                <i className="material-icons">fast_forward</i>
             </button>
         );
     }

@@ -1,0 +1,15 @@
+@import '../../../scss/variables.scss';
+.img{
+    margin: 25px;
+    &.thumb{
+        width: 180px;  
+    }
+}
+
+@media #{$n-tablet}{
+    .img{
+        &.thumb{
+            width: 340px;  
+        }
+    }
+}

@@ -1,4 +1,14 @@
 $color-gray: gray;
 $color-dark-aqua: #07747c;
-$color-night: #1c252c
+$color-night-aqua:#015258;
+$color-night: #1c252c;
+/* breackpoints */
+$n-tablet:(min-width: 768px);
+$n-portrait:(min-width: 1024px);
+$n-desktop:(min-width: 1440px);
+$n-full:(min-width: 1920px);
 
+/* Mixins */
+@mixin transition{
+    transition: all 320ms ease-in-out;
+}

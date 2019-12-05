@@ -1,9 +1,15 @@
 @import '../../../scss/variables.scss';
 .jumbotron{
-    padding: 80px;
+    padding: 40px;
     background-color: $color-night;
     &[color-theme=white]{
         background-color: rgba(white, .1);
+    }   
+}
+
+@media #{$n-tablet}{
+    .jumbotron{
+        padding: 80px;
+        
     }
-    
 }
