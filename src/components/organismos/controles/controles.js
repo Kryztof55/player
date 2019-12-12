@@ -6,21 +6,25 @@ import Player from '../../organismos/player/player'
 import style from './style.scss';
 
 
-class Controles extends Component {
+const Controles = props => {
+    /* verToggle() {
+        console.log(this._reactInternalFiber.child.stateNode.classList);
+        this._reactInternalFiber.child.stateNode.classList.toggle("open")
+    } */
+    const progressBarStyles = props.progress_ms
     
-    verToggle() {
-        this.props.classList.toggle('clase')
-    }
-    render(){
+
         return (
             <div className="controles">
-                <Text className="text display-artist" theme="white" contenido="Nombre del artista"/>
-                <Img className="img thumb" ImagenUrl="./assets/img/tum.jpg" ImagenAlt="Proyecto react"/>
-                <Text className="text display-cancion" theme="white" contenido="Nombre de la cancion"/>
+                <Text className="text display-artist" theme="white" contenido={props.item.artists[0].name}/>
+                <Text className="text display-artist" theme="white" contenido={props.item.album.name}/>
+                <Img className="img thumb" ImagenUrl={props.item.album.images[0].url} ImagenAlt="Proyecto react"/>
+                <Text className="text display-cancion" theme="white" contenido={props.item.name}/>
+                {console.log(progressBarStyles)}
                 <Player/>
-                    <button onClick={(e) => this.verToggle(e)}>abajo</button>
+                {/* <button onClick={(e) => verToggle(e)}>abajo</button> */}
             </div>
         );
-    }
+    
 }
 export default Controles;
