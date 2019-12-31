@@ -10,7 +10,7 @@ class Portadas extends Component {
             <li className="item">
                 <div>
                     <article className="portadas">
-                        <Img className="img thumb" ImagenUrl={props.items[0].images[0]} ImagenAlt="Proyecto react"/>
+                        <Img className="img thumb" ImagenUrl="" ImagenAlt="Proyecto react"/>
                         <Text className="text display-cancion" theme="white" contenido="Nombre de banda"/>
                         <Text className="text display-artist" theme="white" contenido="Nombre del disco"/>
                     </article>

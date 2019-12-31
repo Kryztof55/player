@@ -10,7 +10,6 @@ import HeaderBuscador from './components/moleculas/headBuscador/headBuscador';
 import Controles from './components/organismos/controles/controles';
 import GridPortadas from './components/organismos/gridPortadas/gridPortadas';
 
-
 class App extends Component {
   
   constructor(props) {
@@ -58,7 +57,7 @@ class App extends Component {
         xhr.setRequestHeader("Authorization", "Bearer " + token);
       },
       success: (data) => {
-        console.log("data", data);
+        console.log(data);
         this.setState({
           item: data.item,
           is_playing: data.is_playing,
@@ -86,25 +85,28 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        {!this.state.token && (
-            <a
-              className=""
-              href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}>
-              Iniciar Spotify
-            </a>
-          )}
-        {this.state.token && (
-            <div>
-              <HeaderRep/>
-              <HeaderBuscador/>
-              <Controles item={this.state.item} is_playing={this.state.is_playing} progress_ms={this.progress_ms} />
-              <hr/>
-              <GridPortadas contenido="Playlist"/>
-            </div>
-          )}
-        
-      </div>
+
+        <div className="App">
+          {!this.state.token && (
+            
+              <a
+                className=""
+                href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}>
+                Iniciar Spotify
+              </a>
+            )}
+          {this.state.token && (
+              <div>
+                <HeaderRep/>
+                <HeaderBuscador/>
+                <Controles item={this.state.item} is_playing={this.state.is_playing} progress_ms={this.progress_ms} />
+                <hr/>
+                <GridPortadas contenido="Playlist"/>
+              </div>
+            )}
+          
+        </div>
+
     );
   }
 }
