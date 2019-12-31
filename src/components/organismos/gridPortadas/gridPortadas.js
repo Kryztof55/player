@@ -9,7 +9,7 @@ class gridPortadas extends Component {
     render(){
         return (
             <section className="gridPortadas container">
-                <Titulo className="titulo" theme="white" contenido="Discos"/>
+                <Titulo className="titulo" theme="white" contenido="contenido"/>
                 <Slide/>
             </section>
         );

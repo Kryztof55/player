@@ -11,9 +11,6 @@ class Slide extends Component {
                 <div className="contenedor">
                     <ul>
                         <Portadas className="card"/>
-                        <Portadas className="card"/>
-                        <Portadas className="card"/>
-                        <Portadas className="card"/>
                     </ul>
                 </div>
             </div>

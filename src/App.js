@@ -12,8 +12,9 @@ import GridPortadas from './components/organismos/gridPortadas/gridPortadas';
 
 
 class App extends Component {
-  constructor() {
-    super();
+  
+  constructor(props) {
+    super(props);
     this.state = {
       token: null,
       item: {
@@ -24,6 +25,10 @@ class App extends Component {
         artists: [{ name: "" }],
         duration_ms:0,
       },
+      items: {
+        images: [{ url: "" }]
+
+      },
       is_playing: "Paused",
       progress_ms: 0
     };
@@ -31,6 +36,7 @@ class App extends Component {
   }
   componentDidMount() {
     // Set token
+    
     let _token = hash.access_token;
 
     if (_token) {
@@ -40,6 +46,7 @@ class App extends Component {
       });
       this.getCurrentlyPlaying(_token);
     }
+    
   }
 
   getCurrentlyPlaying(token) {
@@ -59,8 +66,24 @@ class App extends Component {
         });
       }
     });
-
+    $.ajax({
+      url: "https://api.spotify.com/v1/me/playlists",
+      type: "GET",
+      beforeSend: (xhr) => {
+        xhr.setRequestHeader("Authorization", "Bearer " + token);
+      },
+      success: (dataPlay) => {
+        console.log("data", dataPlay);
+        this.setState({
+          playList: dataPlay.items,
+        });
+      }
+    });
   }
+
+/* Intento de players */
+
+
   render() {
     return (
       <div className="App">
@@ -77,7 +100,7 @@ class App extends Component {
               <HeaderBuscador/>
               <Controles item={this.state.item} is_playing={this.state.is_playing} progress_ms={this.progress_ms} />
               <hr/>
-              <GridPortadas />
+              <GridPortadas contenido="Playlist"/>
             </div>
           )}
         

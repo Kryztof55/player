@@ -8,11 +8,12 @@ import BtnPlay from '../../atomos/btnPlay/btnPlay'
 import style from './style.scss';
 
 class Player extends Component {
+    
     render(){
         return (
             <div className="player">
                 <BtnRandom/>
-                <BtnAtras/>
+                <BtnAtras />
                 <BtnPlay/>
                 <BtnAdelante/>
                 <BtnLike/>
