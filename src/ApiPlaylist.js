@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
-const MyContext = React.createContext();
+import MyContext from './ApiContext'
 
 class MyProvider extends Component{
     state = {
@@ -9,9 +8,14 @@ class MyProvider extends Component{
         age : 35,
         estudia: "react.js"
     }
+    getPlayList(){
+        
+    }
     render(){
         return(
-            <MyContext.Provider value="any Value here">
+            <MyContext.Provider value={{
+                state: this.state
+            }}>
                 {this.props.children}
             </MyContext.Provider>
         )
