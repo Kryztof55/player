@@ -4,6 +4,7 @@ import style from './style.scss';
 import Slide from '../../organismos/slide/slide';
 import Titulo from '../../atomos/titulo/titulo';
 import MyContext from '../../../ApiContext';
+import MyProvider from '../../../ApiPlaylist';
 class gridPortadas extends Component {
     
     render(){
@@ -12,7 +13,7 @@ class gridPortadas extends Component {
                 <Titulo className="titulo" theme="white" contenido="contenido"/>
                 <MyContext.Consumer>
                     {(context) => (
-                        <p>I'm Inside{context.state.name}</p>
+                        <p>I'm Insided {context.state.listas[0].name}</p>
                     )}
                 </MyContext.Consumer>
                 <Slide/>

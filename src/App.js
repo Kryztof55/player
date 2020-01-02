@@ -59,24 +59,11 @@ import MyProvider from './ApiPlaylist';
           xhr.setRequestHeader("Authorization", "Bearer " + token);
         },
         success: (data) => {
-          console.log(data);
+          console.log(data.item);
           this.setState({
             item: data.item,
             is_playing: data.is_playing,
             progress_ms: data.progress_ms,
-          });
-        }
-      });
-      $.ajax({
-        url: "https://api.spotify.com/v1/me/playlists",
-        type: "GET",
-        beforeSend: (xhr) => {
-          xhr.setRequestHeader("Authorization", "Bearer " + token);
-        },
-        success: (dataPlay) => {
-          console.log("data", dataPlay);
-          this.setState({
-            playList: dataPlay.items,
           });
         }
       });
