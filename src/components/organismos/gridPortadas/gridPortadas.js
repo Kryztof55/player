@@ -13,7 +13,7 @@ class gridPortadas extends Component {
                 <Titulo className="titulo" theme="white" contenido="contenido"/>
                 <MyContext.Consumer>
                     {(context) => (
-                        <p>I'm Insided {context.state.listas[0].name}</p>
+                        <p>I'm Insided {context.state.items[0].name}</p>
                     )}
                 </MyContext.Consumer>
                 <Slide/>
