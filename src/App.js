@@ -59,7 +59,6 @@ import MyProvider from './ApiPlaylist';
           xhr.setRequestHeader("Authorization", "Bearer " + token);
         },
         success: (data) => {
-          console.log(data.item);
           this.setState({
             item: data.item,
             is_playing: data.is_playing,

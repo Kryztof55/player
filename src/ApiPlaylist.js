@@ -9,10 +9,8 @@ class MyProvider extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            items : [
-                { "name" : ""},
-            ]
-    
+            token: null,
+            listas : [{}]
         }
         this.getPlayList = this.getPlayList.bind(this);
     }
@@ -40,11 +38,9 @@ class MyProvider extends Component{
           beforeSend: (xhr) => {
             xhr.setRequestHeader("Authorization", "Bearer " + token);
           },
-          success: (data) => {
-            console.log("data desde playlist", data.items);
-            this.setState({
-                items: data.items
-            });
+          success: (res) => {
+            console.log("data desde playlist", res);
+            this.setState({listas: res.items});
           }
         });
       }

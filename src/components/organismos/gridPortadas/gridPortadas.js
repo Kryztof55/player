@@ -10,11 +10,16 @@ class gridPortadas extends Component {
     render(){
         return (
             <section className="gridPortadas container">
-                <Titulo className="titulo" theme="white" contenido="contenido"/>
+                <Titulo className="titulo" theme="white" contenido="Listas"/>
                 <MyContext.Consumer>
                     {(context) => (
-                        <p>I'm Insided {context.state.items[0].name}</p>
+                        <React.Fragment>
+                            {context.state.listas.map((lista) => (
+                                <p>{lista.name}</p>
+                            ))}
+                        </React.Fragment>
                     )}
+                    
                 </MyContext.Consumer>
                 <Slide/>
             </section>
