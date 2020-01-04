@@ -35,9 +35,9 @@ import MyProvider from './ApiPlaylist';
       };
       this.getCurrentlyPlaying = this.getCurrentlyPlaying.bind(this);
     }
+      
     componentDidMount() {
       // Set token
-      
       let _token = hash.access_token;
 
       if (_token) {
@@ -53,7 +53,7 @@ import MyProvider from './ApiPlaylist';
     getCurrentlyPlaying(token) {
       // Make a call using the token
       $.ajax({
-        url: "https://api.spotify.com/v1/me/player",
+        url: "https://api.spotify.com/v1/me/player/currently-playing",
         type: "GET",
         beforeSend: (xhr) => {
           xhr.setRequestHeader("Authorization", "Bearer " + token);
@@ -67,6 +67,7 @@ import MyProvider from './ApiPlaylist';
         }
       });
     }
+    
 
   /* Intento de players */
 

@@ -5,17 +5,15 @@ import { authEndpoint, clientId, redirectUri, scopes } from "./config";
 import hash from "./hash.js";
 import MyContext from './ApiContext'
 
-class MyProvider extends Component{
+
+class MyProviderAlbums extends Component{
     constructor(props) {
         super(props);
         this.state = {
             token: null,
-            listas : [],
-            albums : [],
-            pause : false
-
+            albums : [{}]
         }
-        this.getPlayList = this.getPlayList.bind(this);
+        this.getAlbums = this.getAlbums.bind(this);
     }
 
       componentDidMount() {
@@ -32,33 +30,21 @@ class MyProvider extends Component{
         }
         
       }
-      getPlayList(token) {
+  
+      getAlbums(token) {
         // Make a call using the token
         $.ajax({
-          url: "https://api.spotify.com/v1/me/playlists",
+          url: "https://api.spotify.com/v1/albums",
           type: "GET",
           beforeSend: (xhr) => {
             xhr.setRequestHeader("Authorization", "Bearer " + token);
           },
           success: (res) => {
-            console.log("data desde playlist", res.items);
-            this.setState({listas: res.items});
-          }
-        });
-        $.ajax({
-          url: "https://api.spotify.com/v1/albums?ids=41MnTivkwTO3UUJ8DrqEJJ%2C6JWc4iAiJ9FjyK0B59ABb4%2C6UXCm6bOO4gFlDQZV5yL37",
-          type: "GET",
-          beforeSend: (xhr) => {
-            xhr.setRequestHeader("Authorization", "Bearer " + token );
-          },
-          success: (resAlbums) => {
-            console.log("data desde Albums", resAlbums);
-            this.setState({albums: resAlbums.albums});
+            console.log("data desde Albums", res);
+            this.setState({albums: res.albums});
           }
         });
       }
-      
-      
     render(){
         return(
             <MyContext.Provider value={{
@@ -69,4 +55,4 @@ class MyProvider extends Component{
         )
     }
 }
-export default MyProvider;
+export default MyProviderAlbums;

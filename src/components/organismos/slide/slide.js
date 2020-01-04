@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Portadas from '../../moleculas/portadas/portadas'
-
+import MyContext from '../../../ApiContext';
 
 import style from './style.scss';
 
@@ -10,7 +10,7 @@ class Slide extends Component {
             <div className="slide">
                 <div className="contenedor">
                     <ul>
-                        <Portadas className="card"/>
+                        {this.props.children}
                     </ul>
                 </div>
             </div>
