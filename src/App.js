@@ -11,6 +11,7 @@ import Controles from './components/organismos/controles/controles';
 import GridPortadas from './components/organismos/gridPortadas/gridPortadas';
 import MyContext from './ApiContext';
 import MyProvider from './ApiPlaylist';
+import Modal from './components/organismos/modal/modal'
 
   class App extends Component {
     
@@ -18,6 +19,7 @@ import MyProvider from './ApiPlaylist';
       super(props);
       this.state = {
         token: null,
+
         item: {
           album: {
             images: [{ url: "" }]
@@ -30,6 +32,7 @@ import MyProvider from './ApiPlaylist';
           images: [{ url: "" }]
 
         },
+        
         is_playing: "Paused",
         progress_ms: 0
       };
@@ -68,7 +71,7 @@ import MyProvider from './ApiPlaylist';
       });
     }
     
-
+   
   /* Intento de players */
 
 
@@ -93,7 +96,7 @@ import MyProvider from './ApiPlaylist';
                   <GridPortadas contenido="Playlist"/>
                 </div>
               )}
-            
+            <Modal className="modal" title="Play List"/>
           </div>
         </MyProvider>
 

@@ -4,6 +4,9 @@ import BtnAtras from '../../atomos/btnAtras/btnAtras'
 import BtnRandom from '../../atomos/btnRandom/btnRandom'
 import BtnLike from '../../atomos/btnLike/btnLike'
 import BtnPlay from '../../atomos/btnPlay/btnPlay'
+import MyContext from '../../../ApiContext';
+import MyProvider from '../../../ApiPlaylist';
+
 
 import style from './style.scss';
 
@@ -17,7 +20,6 @@ class Player extends Component {
                 <BtnPlay/>
                 <BtnAdelante/>
                 <BtnLike/>
-
             </div>
         );
     }

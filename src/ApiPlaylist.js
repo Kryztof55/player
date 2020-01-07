@@ -28,6 +28,25 @@ class MyProvider extends Component{
             is_playing: "Paused",
             progress_ms: 0,
             
+            showModal(){
+                console.log("show Modal")
+                const body = document.body
+                const modal = document.getElementsByClassName("modal")
+                for (var i = 0; modal.length > i; i ++){
+                  modal[i].className +=" show"
+                }
+                if(!body.classList.contains("modal-open")){
+                  document.body.className = "modal-open"
+                  const back = document.createElement("div")
+                  back.className = "background"
+                  document.body.appendChild(back)
+                }
+                else {
+                  document.body.classList.remove("modal-open")
+                  const back = document.getElementsByClassName('background')
+                  back[0].remove()
+                }
+            },
             getCurrent() {
               
               $.ajax({
