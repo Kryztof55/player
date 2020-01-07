@@ -5,8 +5,14 @@ import Slide from '../../organismos/slide/slide';
 import Titulo from '../../atomos/titulo/titulo';
 import MyContext from '../../../ApiContext';
 import MyProvider from '../../../ApiPlaylist';
+import * as $ from "jquery";
 class gridPortadas extends Component {
-    
+    constructor(props) {
+        super(props)
+        this.state = {
+            
+        }
+    }
     render(){
         return (
             <section className="gridPortadas container">
@@ -15,7 +21,7 @@ class gridPortadas extends Component {
                     <MyContext.Consumer>
                             {(context) => (
                                 <React.Fragment>
-                                    {context.state.listas.map((lista, index) => (
+                                    {context.state.listas.map((lista,index, id) => (
                                         <Portadas key={index} className="card" mainImage={lista.images[0].url} mainDescription={lista.tracks.total + " Canciones"} mainName={lista.name}/>
                                     ))}
                                 </React.Fragment>

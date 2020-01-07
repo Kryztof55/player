@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import * as $ from "jquery";
 import style from './style.scss';
+import MyContext from '../../../ApiPlaylist';
 
 class BtnPlay extends Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class BtnPlay extends Component {
                 url: "https://api.spotify.com/v1/me/player/pause",
                 type: "PUT",
                 beforeSend: (xhr) => {
-                  xhr.setRequestHeader("Authorization", "Bearer BQAjeLhDlYLXaowvzRhcVMW-PqsZyUbdVuKs5iZ4s2KFEGw9Mx6CVYmbcWvIhE87Xgq6Pe1AlmRkgANUEdlfYOW-zsHSDw4BcpHl4FDZ2Rluw6k__0W6N2bGLfRFYtVm-jFWDsp_59FdjHzLxr0");
+                  xhr.setRequestHeader("Authorization", "Bearer BQC3SFy_eNy0L5Tllz1NvnNtl7MiA9mWJ4z3HdoW2xvc6aDKSrFWfHqsJ9sBR7Ttai2pXtMpf2DMSmaXDb-b-_DU--SPW35l8fmlFm_JkzG1qtEc6yAT3QcQcr4UrjfIDF8a_NawX7ev7SWXsZe7LAVmieEoX3_22WsxZG55jFIgCAEZ5n7OKNNUaewi1O5Pl5lY9UVtd4qlae-gWezevGQu-xbnHYCZbdC9rQxgXMXahSGbAi5sV4-cCyGTHet66l-P23nRKpAwHA");
                 },
                 success: (pause) => {
                   this.setState({
@@ -30,7 +31,7 @@ class BtnPlay extends Component {
                 url: "https://api.spotify.com/v1/me/player/play",
                 type: "PUT",
                 beforeSend: (xhr) => {
-                  xhr.setRequestHeader("Authorization", "Bearer BQAjeLhDlYLXaowvzRhcVMW-PqsZyUbdVuKs5iZ4s2KFEGw9Mx6CVYmbcWvIhE87Xgq6Pe1AlmRkgANUEdlfYOW-zsHSDw4BcpHl4FDZ2Rluw6k__0W6N2bGLfRFYtVm-jFWDsp_59FdjHzLxr0");
+                  xhr.setRequestHeader("Authorization", "Bearer BQC3SFy_eNy0L5Tllz1NvnNtl7MiA9mWJ4z3HdoW2xvc6aDKSrFWfHqsJ9sBR7Ttai2pXtMpf2DMSmaXDb-b-_DU--SPW35l8fmlFm_JkzG1qtEc6yAT3QcQcr4UrjfIDF8a_NawX7ev7SWXsZe7LAVmieEoX3_22WsxZG55jFIgCAEZ5n7OKNNUaewi1O5Pl5lY9UVtd4qlae-gWezevGQu-xbnHYCZbdC9rQxgXMXahSGbAi5sV4-cCyGTHet66l-P23nRKpAwHA");
                 },
                 success: (play) => {
                   this.setState({
@@ -43,8 +44,8 @@ class BtnPlay extends Component {
     render(){
         return (
             <button className="btn btnPlay" onClick={(e) => this.pause(e)}>
-                <i className="material-icons">play_arrow</i>
-            </button>
+              <i className="material-icons">play_arrow</i>
+            </button>       
         );
     }
 }
